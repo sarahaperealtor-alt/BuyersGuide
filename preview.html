@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Carolina Buyer Ready — Epique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #1a4a35;
+    --forest-deep: #0f2e1f;
+    --forest-mid: #2a6049;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --cream: #faf7f0;
+    --cream-warm: #f4ede0;
+    --parchment: #ede4d3;
+    --ink: #1c1a16;
+    --ink-mid: #3a3530;
+    --ink-light: #6b6560;
+    --rule: #c9a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--forest-deep);
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 0.35em;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: var(--forest-deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-photo-side {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-photo-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: sepia(10%) contrast(1.05);
+  }
+
+  .cover-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,28,18,0) 60%, var(--forest-deep) 100%);
+  }
+
+  .cover-text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .cover-headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 0.92;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  .cover-headline span {
+    color: var(--gold);
+  }
+
+  .cover-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .cover-toc {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cover-toc li {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--parchment);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .cover-toc li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 0.5px;
+    background: var(--gold);
+    flex-shrink: 0;
+    transform: translateY(-3px);
+  }
+
+  .cover-toc strong {
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .cover-byline {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 0.5px solid rgba(201,169,110,0.3);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--gold-light);
+  }
+
+  .cover-brand {
+    margin-top: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── DIVIDER ── */
+  .chapter-divider {
+    background: var(--forest);
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 60px;
+    height: 0.5px;
+    background: rgba(201,169,110,0.3);
+    transform: translateY(-50%);
+  }
+
+  .chapter-divider-inner {
+    position: relative;
+    display: inline-block;
+    background: var(--forest);
+    padding: 0 32px;
+  }
+
+  .chapter-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .chapter-title-div {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    font-style: italic;
+  }
+
+  /* ── ARTICLE CONTAINER ── */
+  .article {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .article-wide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* ── ARTICLE HEADERS ── */
+  .article-kicker {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 16px;
+  }
+
+  .article-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--forest-deep);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .article-headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--forest);
+  }
+
+  .article-deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink-mid);
+    font-style: italic;
+    margin-bottom: 40px;
+    max-width: 680px;
+  }
+
+  .article-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .article-rule::before,
+  .article-rule::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  .article-rule span {
+    color: var(--gold);
+    font-size: 16px;
+  }
+
+  /* ── BODY COPY ── */
+  .body-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 17.5px;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+
+  .body-text p + p {
+    margin-top: 1.2em;
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 5.5em;
+    line-height: 0.75;
+    margin: 0.08em 0.08em 0 0;
+    color: var(--forest);
+    font-weight: 700;
+  }
+
+  /* ── DEFINITIONS PAGE ── */
+  .definitions-page {
+    background: var(--forest-deep);
+    padding: 0;
+  }
+
+  .def-header {
+    padding: 60px 60px 48px;
+    border-bottom: 0.5px solid rgba(201,169,110,0.25);
+  }
+
+  .def-header-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .def-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .def-header-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .def-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .def-section {
+    padding: 48px 60px;
+    border-right: 0.5px solid rgba(201,169,110,0.15);
+    border-bottom: 0.5px solid rgba(201,169,110,0.15);
+  }
+
+  .def-section:nth-child(even) {
+    border-right: none;
+  }
+
+  .def-section-full {
+    grid-column: 1 / -1;
+    padding: 48px 60px;
+    border-bottom: 0.5px solid rgba(201,169,110,0.15);
+  }
+
+  .def-section-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .def-item {
+    margin-bottom: 20px;
+  }
+
+  .def-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+
+  .def-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(250,247,240,0.75);
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 48px 0;
+    padding: 40px 48px;
+    border-left: 3px solid var(--gold);
+    background: var(--cream-warm);
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--forest-deep);
+    font-weight: 400;
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-style: normal;
+  }
+
+  /* ── CHECKLIST PAGE ── */
+  .checklist-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 100vh;
+    background: var(--cream);
+  }
+
+  .checklist-sidebar {
+    background: var(--forest);
+    padding: 72px 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checklist-sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  .checklist-sidebar-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(250,247,240,0.72);
+    flex: 1;
+  }
+
+  .checklist-sidebar-brand {
+    margin-top: 48px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .checklist-main {
+    padding: 72px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .checklist-group-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 24px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 0.5px solid var(--parchment);
+  }
+
+  .checklist-group-title:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--parchment);
+  }
+
+  .check-icon {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--forest);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check-icon::after {
+    content: '';
+    width: 8px;
+    height: 5px;
+    border-left: 1.5px solid var(--forest);
+    border-bottom: 1.5px solid var(--forest);
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .check-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest-deep);
+    margin-bottom: 2px;
+  }
+
+  .check-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-light);
+  }
+
+  /* ── NUMBERED STEPS ── */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 0.5px solid var(--parchment);
+    align-items: flex-start;
+  }
+
+  .step-item:last-child {
+    border-bottom: none;
+  }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--parchment);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+  }
+
+  .step-content {}
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 8px;
+  }
+
+  .step-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+
+  /* ── TWO-COLUMN LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  /* ── COMPARISON SPREAD ── */
+  .comparison-spread {
+    background: var(--forest-deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+  }
+
+  .comp-panel {
+    padding: 72px 56px;
+    border-right: 0.5px solid rgba(201,169,110,0.2);
+  }
+
+  .comp-panel:last-child {
+    border-right: none;
+  }
+
+  .comp-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .comp-panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 1.15;
+  }
+
+  .comp-intro {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(250,247,240,0.7);
+    margin-bottom: 40px;
+  }
+
+  .comp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .comp-list li {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .comp-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: 'EB Garamond', serif;
+  }
+
+  .comp-list strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .comp-list span {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(250,247,240,0.65);
+  }
+
+  /* ── TRANSACTION ROADMAP ── */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--parchment);
+    border: 1px solid var(--parchment);
+  }
+
+  .roadmap-step {
+    background: #fff;
+    padding: 32px 28px;
+  }
+
+  .roadmap-step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .roadmap-step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+
+  .roadmap-step-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink-light);
+  }
+
+  .roadmap-finale {
+    background: var(--forest);
+    padding: 40px 48px;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .roadmap-finale p {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+  }
+
+  .roadmap-finale .step-num-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.1);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* ── FAQ SECTION ── */
+  .faq-item {
+    padding: 36px 0;
+    border-bottom: 0.5px solid var(--parchment);
+  }
+
+  .faq-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .faq-a {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+  }
+
+  /* ── MISTAKES BOX ── */
+  .mistakes-box {
+    background: var(--forest-deep);
+    padding: 48px 56px;
+    margin-top: 48px;
+  }
+
+  .mistakes-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  .mistakes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 40px;
+    list-style: none;
+  }
+
+  .mistakes-list li {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: rgba(250,247,240,0.78);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .mistakes-list li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 18px;
+    line-height: 1;
+    top: 2px;
+  }
+
+  /* ── COSTS PAGE ── */
+  .costs-header {
+    background: var(--forest);
+    padding: 64px 60px;
+  }
+
+  .costs-header-super {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .costs-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .costs-header h2 span {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .costs-header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(250,247,240,0.7);
+    margin-top: 20px;
+    max-width: 560px;
+  }
+
+  .costs-body {
+    padding: 64px 60px;
+  }
+
+  .costs-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 56px;
+  }
+
+  .costs-col-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .costs-intro-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 24px;
+  }
+
+  .costs-item {
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--parchment);
+  }
+
+  .costs-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 4px;
+  }
+
+  .costs-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-light);
+  }
+
+  .costs-footer-bar {
+    background: var(--cream-warm);
+    border-top: 2px solid var(--forest);
+    padding: 40px 60px;
+  }
+
+  .costs-footer-bar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .costs-footer-bar p {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--ink-mid);
+    margin-bottom: 20px;
+  }
+
+  .costs-footer-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 60px;
+    list-style: none;
+  }
+
+  .costs-footer-items li {
+    font-family: 'EB Garamond', serif;
+    font-size: 15.5px;
+    color: var(--ink-mid);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .costs-footer-items li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--forest);
+    font-size: 22px;
+    line-height: 1;
+    top: 0px;
+  }
+
+  .costs-footer-items strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest-deep);
+  }
+
+  /* ── AGENT PAGE ── */
+  .agent-spread {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    min-height: 80vh;
+  }
+
+  .agent-left {
+    padding: 72px 56px;
+    background: var(--cream);
+    border-right: 0.5px solid var(--parchment);
+  }
+
+  .agent-right {
+    padding: 72px 48px;
+    background: var(--cream-warm);
+  }
+
+  .agent-standfirst {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--forest-deep);
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .service-item {
+    padding: 24px 0;
+    border-bottom: 0.5px solid var(--parchment);
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 6px;
+  }
+
+  .service-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-light);
+  }
+
+  /* ── BUYER AGREEMENTS PAGE ── */
+  .agreements-hero {
+    background: var(--forest-deep);
+    padding: 72px 60px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agreements-hero::after {
+    content: '"IN A MODERN MARKET, CLARITY IS THE ULTIMATE LUXURY."';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.25);
+    text-align: center;
+    padding: 24px 40px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .agreements-hero-kicker {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .agreements-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 28px;
+    max-width: 700px;
+  }
+
+  .agreements-hero-deck {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: rgba(250,247,240,0.75);
+    max-width: 680px;
+    font-style: italic;
+  }
+
+  .agreements-body {
+    padding: 64px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .agreements-col-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 28px;
+    line-height: 1.25;
+  }
+
+  .agreements-clarity {
+    background: var(--forest);
+    padding: 20px 40px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .agreements-clarity p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(250,247,240,0.7);
+  }
+
+  /* ── BRIDGE PAGE ── */
+  .bridge-page {
+    min-height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bridge-left {
+    background: var(--forest-deep);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .bridge-brand-bg {
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 160px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .bridge-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+
+  .bridge-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  .bridge-right {
+    background: var(--cream-warm);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bridge-right h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .bridge-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+
+  /* ── CLOSING PAGE ── */
+  .closing-page {
+    background: var(--forest-deep);
+    padding: 100px 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .closing-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 48px;
+  }
+
+  .closing-headline span {
+    color: var(--gold);
+  }
+
+  .closing-rule {
+    width: 1px;
+    height: 60px;
+    background: var(--gold);
+    margin: 0 auto 48px;
+  }
+
+  .closing-deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(250,247,240,0.8);
+    max-width: 680px;
+    margin-bottom: 64px;
+  }
+
+  .closing-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .closing-name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .closing-phone {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .closing-url {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: rgba(201,169,110,0.7);
+    margin-top: 8px;
+  }
+
+  .closing-brand {
+    margin-top: 64px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 36px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ── FOLIO ── */
+  .folio {
+    background: var(--ink);
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .folio-brand {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(250,247,240,0.35);
+  }
+
+  .folio-page {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: rgba(250,247,240,0.25);
+  }
+
+  .folio-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(250,247,240,0.25);
+    text-align: right;
+  }
+
+  /* ── WINNING THE HOME ── */
+  .winning-page {
+    background: var(--cream);
+  }
+
+  .winning-banner {
+    background: var(--forest);
+    padding: 48px 60px;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .winning-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  .winning-banner-deck {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(250,247,240,0.72);
+    font-style: italic;
+    padding-top: 6px;
+  }
+
+  .winning-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 64px 60px;
+  }
+
+  .winning-left {
+    padding-right: 60px;
+    border-right: 0.5px solid var(--parchment);
+  }
+
+  .winning-right {
+    padding-left: 60px;
+  }
+
+  .winning-pullout {
+    background: var(--cream-warm);
+    border-left: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-bottom: 36px;
+  }
+
+  .winning-pullout p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--forest-deep);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  .winning-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest);
+    margin: 20px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .winning-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 16.5px;
+    line-height: 1.72;
+    color: var(--ink-mid);
+    margin-bottom: 8px;
+  }
+
+  .risk-section {
+    margin-bottom: 36px;
+  }
+
+  .risk-section-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid var(--parchment);
+  }
+
+  .risk-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    line-height: 1.72;
+    color: var(--ink-mid);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .cover { grid-template-columns: 1fr; min-height: auto; }
+    .cover-photo-side { height: 60vw; }
+    .cover-text-side { padding: 48px 32px; }
+    .def-grid { grid-template-columns: 1fr; }
+    .def-section { border-right: none; }
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+    .checklist-layout { grid-template-columns: 1fr; }
+    .checklist-sidebar { padding: 48px 32px; }
+    .checklist-main { padding: 48px 32px; }
+    .comparison-spread { grid-template-columns: 1fr; }
+    .roadmap-grid { grid-template-columns: 1fr; }
+    .costs-two-col { grid-template-columns: 1fr; gap: 40px; }
+    .costs-footer-items { grid-template-columns: 1fr; }
+    .agent-spread { grid-template-columns: 1fr; }
+    .agreements-body { grid-template-columns: 1fr; }
+    .bridge-page { grid-template-columns: 1fr; }
+    .winning-body { grid-template-columns: 1fr; }
+    .winning-left { padding-right: 0; border-right: none; border-bottom: 0.5px solid var(--parchment); padding-bottom: 40px; margin-bottom: 40px; }
+    .winning-right { padding-left: 0; }
+    .winning-banner { flex-direction: column; gap: 20px; }
+    .mistakes-list { grid-template-columns: 1fr; }
+    .article { padding: 56px 28px; }
+    .article-wide { padding: 56px 28px; }
+    .folio { flex-direction: column; gap: 4px; text-align: center; }
+    .agreements-hero { padding: 56px 32px 80px; }
+    .agreements-body { padding: 48px 32px; }
+    .costs-body { padding: 48px 32px; }
+    .costs-footer-bar { padding: 32px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 2: DEFINITIONS OF HOME BUYING -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="definitions-page" id="definitions">
+  <div class="def-header">
+    <div class="def-header-eyebrow">The Lexicon</div>
+    <h2 class="def-header-title"><em>Definitions</em><br>of Home Buying</h2>
+  </div>
+  <div class="def-grid">
+    <div class="def-section-full">
+      <div class="def-section-title">The Financials</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+        <div class="def-item">
+          <div class="def-term">Earnest Money</div>
+          <div class="def-desc">Your "good faith" deposit that shows you are serious; it is credited back to you at closing.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Due Diligence</div>
+          <div class="def-desc">The "safety window" to perform inspections and appraisals before fully committing to the purchase.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Closing Costs</div>
+          <div class="def-desc">The 2%–5% of the purchase price covering taxes, lender fees, and legal services.</div>
+        </div>
+      </div>
+    </div>
+    <div class="def-section">
+      <div class="def-section-title">The Status</div>
+      <div class="def-item">
+        <div class="def-term">Under Contract</div>
+        <div class="def-desc">The seller has accepted your offer, and the official timeline to closing has begun.</div>
+      </div>
+      <div class="def-item">
+        <div class="def-term">Contingent</div>
+        <div class="def-desc">The deal is moving forward provided specific conditions, like a clean inspection, are met.</div>
+      </div>
+      <div class="def-item">
+        <div class="def-term">Clear to Close</div>
+        <div class="def-desc">The final milestone; the lender has approved all paperwork and you are ready to sign.</div>
+      </div>
+    </div>
+    <div class="def-section">
+      <div class="def-section-title">The Logistics</div>
+      <div class="def-item">
+        <div class="def-term">As-Is</div>
+        <div class="def-desc">The seller will not make repairs, but you still maintain the right to inspect the property's condition.</div>
+      </div>
+      <div class="def-item">
+        <div class="def-term">Attorney State</div>
+        <div class="def-desc">In South Carolina, a licensed attorney is required by law to manage your settlement and deed recording.</div>
+      </div>
+      <div class="def-item">
+        <div class="def-term">Final Walkthrough</div>
+        <div class="def-desc">Your last check of the home to ensure it is in the agreed-upon condition before funds transfer.</div>
+      </div>
+    </div>
+    <div class="def-section-full">
+      <div class="def-section-title">The Strategy</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+        <div class="def-item">
+          <div class="def-term">Appraisal Gap</div>
+          <div class="def-desc">When a home's value comes in lower than the purchase price; we then negotiate how to bridge that difference.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Multiple Offers</div>
+          <div class="def-desc">A competitive scenario where strategy, like clean terms and timing, becomes as vital as the price itself.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Backup Offer</div>
+          <div class="def-desc">A formal position as the "next in line" should the first contract fail to reach the closing table.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">02</div>
+  <div class="folio-title">Definitions of Home Buying</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 3: HOW TO CHOOSE THE RIGHT HOME -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter One</span>
+    <div class="chapter-title-div">The Search</div>
+  </div>
+</div>
+<section class="article" style="max-width:800px;">
+  <div class="article-kicker">Beyond What Looks Good on Paper</div>
+  <h2 class="article-headline">How to Choose<br><em>the Right Home</em></h2>
+  <p class="article-deck">Start with what you can live with, not just what you like. The right home is one that still works for you years from now.</p>
+  <div class="article-rule"><span>✦</span></div>
+  <div class="body-text">
+    <p class="drop-cap">It's easy to focus on finishes and upgrades. Countertops photograph beautifully. Staged lighting makes every room feel aspirational. But the right home is one that still works for you years from now — not just on day one.</p>
+  </div>
+  <div class="step-list" style="margin-top:48px;">
+    <div class="step-item">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Location always outlasts features</div>
+        <div class="step-body">Paint, floors, and fixtures can change — but location cannot. Think about commute, daily routine, and how the area fits your lifestyle long-term. A beautiful kitchen in the wrong neighborhood is a compromise you'll feel every day.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Separate emotion from strategy</div>
+        <div class="step-body">It's normal to love a home — but make sure the numbers, condition, and terms still make sense before deciding. Emotional decisions without strategic grounding cost buyers dearly in competitive markets.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">Think resale, even if you're not planning to sell</div>
+        <div class="step-body">Life changes. A strong future resale position gives you flexibility and protects your investment. The home you love today should be one others will love tomorrow.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <div class="step-title">Pay attention to flow, not just photos</div>
+        <div class="step-body">Does the layout actually work for how you live? Online photos don't always reflect real-life movement through the home. Consider daily rhythms — morning routines, entertaining, quiet evenings.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <div class="step-title">Don't ignore the "feel" factor</div>
+        <div class="step-body">Logic matters, but so does comfort. If a home checks the boxes but still doesn't feel right, that matters more than people admit. Trust your instincts alongside your analysis.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pull-quote" style="margin-top:56px;">
+    <p>The right home isn't just found — it's recognized when strategy and lifestyle line up at the same time. That's where guidance makes the difference.</p>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">03</div>
+  <div class="folio-title">How to Choose the Right Home</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 4: TRANSACTION ROADMAP -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter Two</span>
+    <div class="chapter-title-div">Under Contract</div>
+  </div>
+</div>
+<section class="article-wide">
+  <div class="article-kicker">From Accepted Offer to Closing Day</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:56px;align-items:start;">
+    <div>
+      <h2 class="article-headline" style="font-size:clamp(36px,4vw,52px);">Transaction<br><em>Roadmap</em></h2>
+    </div>
+    <div>
+      <p class="article-deck" style="font-size:19px;margin-bottom:0;">Finding a home is exciting, but the success is in managing everything that happens after the offer is accepted. That's where guidance matters most.</p>
+    </div>
+  </div>
+  <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:12px;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);text-align:center;margin-bottom:32px;">From accepted offer to closing day, here's exactly what happens next</p>
+  <div class="roadmap-grid">
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 01</div>
+      <div class="roadmap-step-title">Offer Accepted</div>
+      <div class="roadmap-step-body">Your offer is accepted and the home moves from "available" to under contract. Earnest money is submitted and the process officially begins.</div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 02</div>
+      <div class="roadmap-step-title">Contract & Timeline Setup</div>
+      <div class="roadmap-step-body">All contract terms are finalized and key deadlines are set for inspections, appraisal, and closing.</div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 03</div>
+      <div class="roadmap-step-title">Home Inspection</div>
+      <div class="roadmap-step-body">A licensed inspector evaluates the property to identify any repairs or concerns before moving forward.</div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 04</div>
+      <div class="roadmap-step-title">Negotiations</div>
+      <div class="roadmap-step-body">Based on inspection results, repairs, credits, or adjustments may be requested and finalized between both parties.</div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 05</div>
+      <div class="roadmap-step-title">Appraisal</div>
+      <div class="roadmap-step-body">The lender confirms the home's value supports the purchase price.</div>
+    </div>
+    <div class="roadmap-step">
+      <div class="roadmap-step-num">Step 06</div>
+      <div class="roadmap-step-title">Loan Processing & Underwriting</div>
+      <div class="roadmap-step-body">Your lender reviews all financial documents and finalizes loan approval.</div>
+    </div>
+    <div class="roadmap-step" style="grid-column:1;border-right:none;">
+      <div class="roadmap-step-num">Step 07</div>
+      <div class="roadmap-step-title">Final Walkthrough</div>
+      <div class="roadmap-step-body">A last review of the home to ensure everything is in agreed condition before closing.</div>
+    </div>
+    <div class="roadmap-finale" style="border-right:none;">
+      <div class="step-num-big">08</div>
+      <p>Closing Day — Documents are signed, funds are transferred, and ownership officially changes hands.<br><strong style="color:var(--gold-light);">You Get the Keys.</strong></p>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">04</div>
+  <div class="folio-title">Transaction Roadmap</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 5: TOP 3 QUESTIONS + MISTAKES -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter Three</span>
+    <div class="chapter-title-div">What Buyers Ask</div>
+  </div>
+</div>
+<section class="article">
+  <div class="article-kicker">The Most Searched Questions</div>
+  <h2 class="article-headline">Top 3 Questions<br><em>Buyers Ask Online</em></h2>
+  <div class="article-rule"><span>✦</span></div>
+  <div class="faq-item">
+    <div class="faq-number">Question 01</div>
+    <div class="faq-q">How much house can I afford?</div>
+    <div class="faq-a">It's not just about the price — it's about your monthly payment. Most buyers qualify based on income, debts, and interest rates. A quick pre-approval will show you a comfortable price range so you can shop with confidence, not guesswork.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-number">Question 02</div>
+    <div class="faq-q">What credit score do I need?</div>
+    <div class="faq-a">You might be closer than you think. Many loan programs allow scores as low as the mid-500s to low-600s, depending on the loan type. Even if you're not quite ready, a lender can guide you on simple steps to improve quickly.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-number">Question 03</div>
+    <div class="faq-q">Is now a good time to buy?</div>
+    <div class="faq-a">The right time depends on you, not the headlines. If you're financially ready, today's market can offer opportunities like less competition or negotiating power. Plus, you can always refinance later if rates improve.</div>
+  </div>
+  <div class="mistakes-box">
+    <div class="mistakes-box-title">Mistakes Buyers Make</div>
+    <ul class="mistakes-list">
+      <li>Starting the search before getting pre-approved</li>
+      <li>Focusing only on the listing price</li>
+      <li>Waiting too long to make an offer</li>
+      <li>Skipping strategy in competitive situations</li>
+      <li>Overlooking inspection results emotionally</li>
+      <li>Not understanding total move-in costs</li>
+    </ul>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">05</div>
+  <div class="folio-title">Top Questions & Common Mistakes</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 6: TRANSACTION COSTS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter Four</span>
+    <div class="chapter-title-div">The Financial Picture</div>
+  </div>
+</div>
+<section style="background:var(--cream);">
+  <div class="costs-header">
+    <div class="costs-header-super">Understanding Your Investment</div>
+    <h2>Transaction<br><span>Cost</span></h2>
+    <p>Understanding beyond the down payment.</p>
+  </div>
+  <div class="costs-body">
+    <div class="costs-two-col">
+      <div>
+        <div class="costs-col-title">Up front and<br>out of pocket</div>
+        <p class="costs-intro-text">These are paid during the under-contract period and are separate from your final closing funds.</p>
+        <div class="costs-item">
+          <div class="costs-term">Earnest Money Deposit (EMD)</div>
+          <div class="costs-desc">A good-faith deposit credited toward your total down payment at settlement.</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Inspections</div>
+          <div class="costs-desc">The home inspection and any necessary pest, mold or other inspections are paid directly to the inspector to uncover potential issues and provide negotiation leverage.</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Appraisal Fee</div>
+          <div class="costs-desc">Required by lenders to confirm the property value; typically paid up-front at the lender's request.</div>
+        </div>
+      </div>
+      <div>
+        <div class="costs-col-title">Closing cost<br>break down</div>
+        <p class="costs-intro-text">In an attorney state like South Carolina, your final settlement includes:</p>
+        <div class="costs-item">
+          <div class="costs-term">Lender Fees</div>
+          <div class="costs-desc">Costs to process and underwrite your loan.</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Title Services</div>
+          <div class="costs-desc">Required Lender's policy and recommended Owner's Title Insurance for your protection.</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Closing Attorney Fee</div>
+          <div class="costs-desc">South Carolina law requires an attorney to manage the process and settlement meeting.</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Recording Fees & Taxes</div>
+          <div class="costs-desc">Fees paid to the county to record the deed and state transfer taxes (Doc Stamps).</div>
+        </div>
+        <div class="costs-item">
+          <div class="costs-term">Escrow Pre-paids</div>
+          <div class="costs-desc">A reserve for property taxes and your first year of homeowner's insurance.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="costs-footer-bar">
+    <h3>Funds required for closing</h3>
+    <p>These remaining funds are due at the closing table, as detailed on your final Closing Disclosure (CD).</p>
+    <ul class="costs-footer-items">
+      <li><strong>Down Payment:</strong> Your total purchase price minus the base loan amount (your initial EMD is deducted from this total).</li>
+      <li><strong>Closing Costs:</strong> Generally ranging from 2% to 5% of the purchase price.</li>
+    </ul>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">06</div>
+  <div class="folio-title">Transaction Cost Breakdown</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 7: PRE-QUALIFIED vs PRE-APPROVED -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="comparison-spread">
+  <div class="comp-panel">
+    <div class="comp-eyebrow">The Baseline</div>
+    <div class="comp-panel-title">Pre-Qualification:<br>The Starting Line</div>
+    <p class="comp-intro">Your search for the discerning starts with understanding your purchasing power. Consider pre-qualification your baseline — a preliminary assessment of what you might be able to afford, giving you a clearer picture of the path forward in a competitive landscape like South Carolina.</p>
+    <ul class="comp-list">
+      <li>
+        <strong>Basis</strong>
+        <span>Self-reported income and debt.</span>
+      </li>
+      <li>
+        <strong>Speed</strong>
+        <span>Instant, informal estimate.</span>
+      </li>
+      <li>
+        <strong>Purpose</strong>
+        <span>Establishes a rough baseline budget.</span>
+      </li>
+      <li>
+        <strong>Market Weight</strong>
+        <span>Low; intended for initial planning.</span>
+      </li>
+    </ul>
+  </div>
+  <div class="comp-panel">
+    <div class="comp-eyebrow">The Gold Standard</div>
+    <div class="comp-panel-title">Pre-Approval:<br>The Gold Standard</div>
+    <p class="comp-intro">While pre-qualification is an estimate, pre-approval is the verified assurance sellers look for. In South Carolina's competitive market, arriving pre-approved signals you are a serious, "Buyer Ready" offer — and that distinction can make all the difference.</p>
+    <ul class="comp-list">
+      <li>
+        <strong>Basis</strong>
+        <span>Verified tax returns, pay stubs, and credit.</span>
+      </li>
+      <li>
+        <strong>Speed</strong>
+        <span>Comprehensive underwriting review.</span>
+      </li>
+      <li>
+        <strong>Purpose</strong>
+        <span>Secures a formal loan commitment letter.</span>
+      </li>
+      <li>
+        <strong>Market Weight</strong>
+        <span>High; signals a serious, "Buyer Ready" offer.</span>
+      </li>
+    </ul>
+    <div style="margin-top:48px;padding-top:32px;border-top:0.5px solid rgba(201,169,110,0.2);">
+      <div style="font-family:'Jost',sans-serif;font-weight:200;font-size:36px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.18);">EPIQUE</div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">07</div>
+  <div class="folio-title">Pre-Qualified vs Pre-Approved</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 8: LENDING CHECK LIST -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter Five</span>
+    <div class="chapter-title-div">The Paperwork</div>
+  </div>
+</div>
+<section class="checklist-layout">
+  <div class="checklist-sidebar">
+    <div class="checklist-sidebar-title">Lending<br>Check List</div>
+    <div style="width:32px;height:1px;background:var(--gold);margin:24px 0;"></div>
+    <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">The Verified Steps to Pre-Approval</p>
+    <div class="checklist-sidebar-body">
+      <p>Lender Required Documents</p>
+      <br>
+      <p>The discerning buyer knows that precision is key to a seamless execution. Use this essential checklist to gather your financial story, ensuring that when you find the right property in South Carolina, you are positioned to move with the confidence and speed of a cash buyer.</p>
+    </div>
+    <div class="checklist-sidebar-brand">Epique</div>
+  </div>
+  <div class="checklist-main">
+    <div class="checklist-group-title">Income & Employment</div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Pay Stubs</div>
+        <div class="check-desc">Last 30 days of pay stubs and last 2 years of W-2s.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Tax Returns</div>
+        <div class="check-desc">Full federal tax returns and any K-1s from the last 2 years.</div>
+      </div>
+    </div>
+    <div class="checklist-group-title">Assets & Accounts</div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Bank Statements</div>
+        <div class="check-desc">Last 60 days of bank statements for all accounts.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Investment Accounts</div>
+        <div class="check-desc">Recent 401(k), IRA, or brokerage statements.</div>
+      </div>
+    </div>
+    <div class="checklist-group-title">Identity & History</div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Government ID</div>
+        <div class="check-desc">Valid Driver's License and Social Security Number.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Residential History</div>
+        <div class="check-desc">Residential addresses for the last 2 years.</div>
+      </div>
+    </div>
+    <div class="checklist-group-title">Additional Documentation</div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Gift Letters / Large Deposits</div>
+        <div class="check-desc">Gift letters or proof of large deposits (if applicable).</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <div>
+        <div class="check-label">Legal Documents</div>
+        <div class="check-desc">Divorce decrees or child support orders (if applicable).</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">08</div>
+  <div class="folio-title">Lending Check List</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 9: YOUR AGENT — WHAT TO EXPECT -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="chapter-divider">
+  <div class="chapter-divider-inner">
+    <span class="chapter-number">Chapter Six</span>
+    <div class="chapter-title-div">Your Representation</div>
+  </div>
+</div>
+<section class="agent-spread">
+  <div class="agent-left">
+    <div class="article-kicker">What to Expect from Epique</div>
+    <h2 class="article-headline" style="font-size:clamp(32px,4vw,48px);">Let's<br><em>Be Real.</em></h2>
+    <p class="agent-standfirst">We all have access to the same listings these days. The days of the agent acting as a "gatekeeper" to the MLS are over. You've seen the same apps and scrolled the same websites.</p>
+    <div class="body-text">
+      <p>If all you needed was a link to a listing, you wouldn't need an expert. But a transaction — especially one involving the complexities of South Carolina land, historic structures, or high-value assets — is about much more than finding a house. It's about navigating what happens after you find the one.</p>
+    </div>
+    <div style="margin-top:40px;padding:28px 32px;background:var(--cream-warm);border-top:2px solid var(--forest);">
+      <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;font-style:italic;color:var(--forest-deep);line-height:1.4;">Your Agent<br><span style="font-weight:400;color:var(--forest);">What to Expect from Epique</span></p>
+    </div>
+  </div>
+  <div class="agent-right">
+    <div class="article-kicker">Once the search ends, my real work begins</div>
+    <div class="service-item" style="padding-top:0;">
+      <div class="service-title">Pricing Guidance</div>
+      <div class="service-body">Know true market value so you don't overpay or under-prepare.</div>
+    </div>
+    <div class="service-item">
+      <div class="service-title">Offer Strategy</div>
+      <div class="service-body">Position your offer to stand out and get accepted.</div>
+    </div>
+    <div class="service-item">
+      <div class="service-title">Inspection Negotiation</div>
+      <div class="service-body">Focus on what matters and protect your investment.</div>
+    </div>
+    <div class="service-item">
+      <div class="service-title">Contract-to-Close Management</div>
+      <div class="service-body">Every deadline and detail handled and tracked.</div>
+    </div>
+    <div class="service-item">
+      <div class="service-title">Buyer Tour Experience</div>
+      <div class="service-body">Curated home tours with an interactive map that organizes listings and plans your route — showing exactly when to leave for each home so your day runs smoothly.</div>
+    </div>
+    <div class="service-item">
+      <div class="service-title">Concierge Support</div>
+      <div class="service-body">Bridge options if you need to buy before you sell, plus utility setup so your home is ready when you arrive.</div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">09</div>
+  <div class="folio-title">Your Agent — What to Expect</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 10: WINNING THE RIGHT HOME -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="winning-page">
+  <div class="winning-banner">
+    <h2>Winning<br>the Right<br>Home</h2>
+    <p class="winning-banner-deck">Finding the right home is only the beginning. Securing it on the right terms, while protecting your long-term investment, is where strategy becomes essential. In today's market, success is rarely determined by price alone — it is determined by structure, timing, and the ability to evaluate opportunity with clarity rather than emotion.</p>
+  </div>
+  <div class="winning-body">
+    <div class="winning-left">
+      <div class="winning-pullout">
+        <p>The strongest offers are not always the highest — they are the most intentional.</p>
+      </div>
+      <div class="winning-sub">Value over emotion</div>
+      <p class="winning-text">Decisions should be grounded in market reality, not competition or urgency.</p>
+      <div class="winning-sub">Strength over speed</div>
+      <p class="winning-text">Clean financing, strong terms, and reduced risk often carry more weight than price alone.</p>
+      <div class="winning-sub">Leverage in structure</div>
+      <p class="winning-text">Flexibility with closing timelines, contingencies, and seller priorities can position an offer more competitively without increasing cost.</p>
+      <div class="winning-sub">Disciplined decision-making</div>
+      <p class="winning-text">Not every home should be pursued. The right move includes knowing when to proceed — and when to step back.</p>
+    </div>
+    <div class="winning-right">
+      <div class="risk-section">
+        <div class="risk-section-title">Understanding Potential Risks</div>
+        <p class="risk-body">Every property presents opportunity, but also requires careful evaluation. The goal is not avoidance — it is awareness.</p>
+        <br>
+        <p class="risk-body">Key areas that require attention include structural and long-term considerations such as foundation integrity, roof condition, flood exposure, and any unpermitted improvements.</p>
+        <br>
+        <p class="risk-body">Each of these factors can influence not only cost, but also insurability, resale value, and future flexibility.</p>
+      </div>
+      <div class="risk-section">
+        <div class="risk-section-title">What Can Impact Your Closing Timeline</div>
+        <p class="risk-body">Even well-structured transactions can experience delays once under contract. Understanding this upfront helps prevent unnecessary stress or rushed decisions.</p>
+        <br>
+        <p class="risk-body">Common factors include appraisal variances, additional lender documentation, title findings, or inspection-related negotiations. During this phase, financial stability is essential — significant purchases, new debt, or employment changes can directly affect loan approval.</p>
+      </div>
+      <div class="risk-section">
+        <div class="risk-section-title">A Realistic Timeline</div>
+        <p class="risk-body">Most transactions move from contract to closing in approximately 30 to 45 days, depending on financing and property-specific factors.</p>
+        <br>
+        <p class="risk-body">A measured approach supports a smoother experience: avoid committing to move-out dates too early, delay non-essential scheduling until final approval, and maintain flexibility through closing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">10</div>
+  <div class="folio-title">Winning the Right Home</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 11: BUYER AGREEMENTS -->
+<!-- ══════════════════════════════════════════════ -->
+<section style="background:var(--cream);">
+  <div class="agreements-hero">
+    <div class="agreements-hero-kicker">The New Standard</div>
+    <h2>Transparency, Choice,<br>and the New Standard<br><em style="font-style:italic;font-weight:400;color:var(--gold-light);">Buyer Agreements</em></h2>
+    <p class="agreements-hero-deck">The real estate landscape has shifted toward a model of total transparency. As your advocate, I believe you should have a clear understanding of how professional representation works, and how it is funded, before we begin our journey together.</p>
+  </div>
+  <div class="agreements-body">
+    <div>
+      <div class="agreements-col-title">The Modern Reality<br>of Representation</div>
+      <div class="body-text">
+        <p>Buyer Representation Agreements have always been common practice for top-tier professionals — they are now a formal requirement. A written agreement must be signed before we tour any properties.</p>
+        <br>
+        <p>To ensure we are the right fit for one another, we can always begin with an agreement for a specific property or a short window of time before moving into a long-term commitment.</p>
+      </div>
+      <div style="margin-top:28px;padding:24px 28px;border-left:3px solid var(--gold);background:var(--cream-warm);">
+        <p style="font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--forest-deep);line-height:1.5;"><strong style="font-style:normal;">Professional Fees & Negotiation:</strong> I maintain a set commission rate for my services, which reflects the high-level advocacy, market data, and contract expertise I provide to every client. Real estate commissions are, and always have been, fully negotiable. We will discuss your options in depth to ensure you are informed every step of the way.</p>
+      </div>
+    </div>
+    <div>
+      <div class="agreements-col-title">Navigating Compensation<br>in the Transaction</div>
+      <div class="body-text">
+        <p>South Carolina real estate practices have evolved to provide more direct ways for your representation to be funded. While the responsibility for professional compensation rests with the client, we typically address this through one of two primary methods:</p>
+      </div>
+      <div style="margin-top:24px;" class="body-text">
+        <div style="padding:20px 0;border-bottom:0.5px solid var(--parchment);">
+          <p><strong style="font-family:'Playfair Display',serif;font-size:16px;color:var(--forest-deep);">Strategic Offer Integration</strong><br>Requesting that the Seller pay the brokerage commission directly within the purchase offer.</p>
+        </div>
+        <div style="padding:20px 0;border-bottom:0.5px solid var(--parchment);">
+          <p><strong style="font-family:'Playfair Display',serif;font-size:16px;color:var(--forest-deep);">Seller-to-Broker Agreements</strong><br>Utilizing a separate agreement where the Seller pays the brokerage fee directly to the firm.</p>
+        </div>
+        <div style="padding:20px 0;">
+          <p>You always reserve the right as a buyer to only see homes that fit within your budget in every capacity.</p>
+        </div>
+      </div>
+      <div class="pull-quote" style="margin-top:24px;">
+        <p>We will review these options in detail together to determine the best strategy for your specific move.</p>
+      </div>
+    </div>
+  </div>
+  <div class="agreements-clarity">
+    <p>In a modern market, clarity is the ultimate luxury.</p>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">11</div>
+  <div class="folio-title">Buyer Agreements</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 12: ELEVATED SOLUTIONS / BRIDGE -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="bridge-page">
+  <div class="bridge-left">
+    <div class="bridge-brand-bg">E</div>
+    <div class="bridge-eyebrow">Elevated</div>
+    <div class="bridge-title">SOLUTIONS</div>
+    <div style="width:40px;height:1px;background:var(--gold);margin-bottom:32px;"></div>
+    <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.7;color:rgba(250,247,240,0.55);">For the buyer who needs to navigate the complexity of transition with confidence and purchasing power intact.</p>
+  </div>
+  <div class="bridge-right">
+    <div class="bridge-right">
+      <div class="article-kicker">For Existing Homeowners</div>
+      <h3 class="bridge-right" style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--forest-deep);margin-bottom:20px;line-height:1.2;">Buy Before<br>You Sell</h3>
+      <p class="bridge-body">Own a house? Need to move before you sell? Our BRIDGE option may be your solution.</p>
+      <br>
+      <p class="bridge-body">With BRIDGE you can purchase a home without contingencies so you can take this one step at a time — less stress, more purchasing power.</p>
+      <br>
+      <p class="bridge-body">The BRIDGE program allows you to access your current home's equity to fund the down payment on your next purchase, without the pressure of a simultaneous closing or the risk of losing a home you love.</p>
+      <div style="margin-top:36px;padding-top:24px;border-top:0.5px solid var(--parchment);">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--forest);">Less stress. More purchasing power.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="folio">
+  <div class="folio-brand">Epique · Sara Hape</div>
+  <div class="folio-page">12</div>
+  <div class="folio-title">Elevated Solutions — Bridge</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE 13: CLOSING / ARE YOU READY -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="closing-page">
+  <div class="closing-headline">Are You<br><span>Ready?</span></div>
+  <div class="closing-rule"></div>
+  <p class="closing-deck">A search for the discerning culminates in an exceptional home. But the refined path is as important as the final destination. Let my exclusive resources, deep market knowledge, and unwavering commitment guide you from the very first step. I'm here to simplify the complex and ensure your path to the perfect home is seamless, successful, and truly refined.</p>
+  <div class="closing-contact">
+    <div class="closing-name">Sara Hape</div>
+    <div class="closing-phone">864.300.4922</div>
+    <div class="closing-url">www.SaraHapeRealtor.com</div>
+  </div>
+  <div class="closing-brand">Epique</div>
+</section>
+
+
+<div style="
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:220px;
+  background:linear-gradient(to bottom, rgba(250,247,240,0) 0%, rgba(250,247,240,0.97) 100%);
+  pointer-events:none;
+  z-index:9999;">
+</div>
+<div style="
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:24px;
+  text-align:center;
+  z-index:10000;
+  pointer-events:none;">
+  <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#1a4a35;">Submit your info above to unlock the full guide ↑</p>
+</div>
+<script>
+  // Lock scroll after 600px
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 600) {
+      window.scrollTo(0, 600);
+    }
+  });
+</script>
+
+</body>
+</html>
